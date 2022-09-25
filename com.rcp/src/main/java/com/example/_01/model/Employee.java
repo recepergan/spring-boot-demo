@@ -1,5 +1,6 @@
 package com.example._01.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.stereotype.Controller;
 
 import javax.persistence.*;
@@ -12,6 +13,7 @@ public class Employee {
     private Long id;
     @Column(name = "fullname")
     private String fullName;
+
     private double salary;
     @Column(name = "phonenumber")
     private String phoneNumber;
@@ -25,6 +27,10 @@ public class Employee {
         this.phoneNumber = phoneNumber;
     }
 
+    public Long getId() {
+        return id;
+    }
+
     public String getFullName() {
         return fullName;
     }
@@ -33,6 +39,7 @@ public class Employee {
         this.fullName = fullName;
     }
 
+    @JsonIgnore
     public double getSalary() {
         return salary;
     }
