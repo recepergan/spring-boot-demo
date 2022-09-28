@@ -4,6 +4,7 @@ import com.example._01.dao.EmployeeDAO;
 import com.example._01.model.Employee;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public class EmployeeServiceImpl implements EmployeeService<Employee> {
     EmployeeDAO employeeDAO;
 
     //@Autowired
-    public EmployeeServiceImpl(EmployeeDAO employeeDAO) {
+    public EmployeeServiceImpl(@Qualifier("employeeDAOHibernateImpl") EmployeeDAO employeeDAO) {
         this.employeeDAO = employeeDAO;
     }
 
