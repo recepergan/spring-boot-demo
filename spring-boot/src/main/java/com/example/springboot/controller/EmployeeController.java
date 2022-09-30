@@ -64,6 +64,49 @@ public class EmployeeController {
 
     }
 
+    @GetMapping("/employees/count")
+    public int getAllEmployeeCount() {
+        return employeeService.getAllEmployeeCount();
+
+    }
+
+    @GetMapping("/employees/agegroup")
+    public List<?> getSalaryWithGrouping() {
+        return employeeService.getSalaryWithGrouping();
+
+    }
+
+    @GetMapping("/employees/findByFullName")
+    public List<Employee> findByFullName(String fullname) {
+        return employeeService.findByFullName(fullname);
+
+    }
+
+    @GetMapping("/employees/findByFullNameContaining")
+    public List<Employee> findByFullNameContaining(String str) {
+        return employeeService.findByFullNameContaining(str);
+
+    }
+
+    @GetMapping("/employees/findBySalaryGreaterThan")
+    public List<Employee> findBySalaryGreaterThan(double salary) {
+        return employeeService.findBySalaryGreaterThan(salary);
+
+    }
+
+    @GetMapping("/employees/findTopBySalaryIsGreaterThan")
+    public List<Employee> findTopBySalaryIsGreaterThan(double salary) {
+        return employeeService.findTopBySalaryIsGreaterThan(salary);
+
+    }
+
+
+
+
+
+
+
+
 
 
 
