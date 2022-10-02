@@ -78,6 +78,11 @@ public class EmployeeServiceImpl{
      return employeeRepository.findTopBySalaryIsGreaterThan(salary);
 
     }
+
+    @Transactional
+    public void deleteByFullName(String fullname) {
+        employeeRepository.deleteByFullName(fullname);
+    }
 }
 
 

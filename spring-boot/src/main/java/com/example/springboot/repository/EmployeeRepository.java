@@ -15,12 +15,14 @@ public interface EmployeeRepository extends CrudRepository<Employee,Long> {
 
     @Query("select e.salary,count (e.salary) from Employee e group by e.salary")
     List<?> getSalaryWithGrouping();
-add
+
     //method driven query
     List<Employee> findByFullName(String fullname);
     List<Employee> findByFullNameContaining(String str);
     List<Employee> findBySalaryGreaterThan(double salary);
     List<Employee> findTopBySalaryIsGreaterThan(double salary);
+
+    void deleteByFullName(String fullname);
 
 
 }

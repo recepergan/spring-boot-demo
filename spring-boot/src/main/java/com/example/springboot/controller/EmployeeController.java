@@ -100,6 +100,13 @@ public class EmployeeController {
 
     }
 
+    @DeleteMapping("employees/delete/{fullname}")
+    public String deleteEmployeeById(@PathVariable String fullname) {
+        employeeService.deleteByFullName(fullname);
+        return "Deleted...";
+
+    }
+
 
 
 

@@ -16,6 +16,7 @@ public class VehicleController {
 
     @PostMapping("/vehicles")
     public Vehicle saveVehicle(@RequestBody VehicleDto vehicleDto) {
+
         return vehicleService.save(vehicleDto);
     }
 
