@@ -8,13 +8,17 @@ import java.util.Objects;
 
 @Entity
 public class Employee {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
+
     @Column(name = "fullname")
     private String fullName;
 
     private double salary;
+
     @Column(name = "phonenumber")
     private String phoneNumber;
 
