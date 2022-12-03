@@ -44,7 +44,7 @@ public class HelloController {
         return ("Hello " + name + ", from " + year);
     }
 
-    @GetMapping("/greetie ng/{id}")
+    @GetMapping("/greeting/{id}")
     public ResponseEntity<String> greeting(@RequestHeader("Connection") String connection, @PathVariable int id) {
 
         HttpHeaders headers = new HttpHeaders();
@@ -68,6 +68,25 @@ public class HelloController {
 
 
     }
+
+    @GetMapping("/calculatee/{operation}")
+    public String calculatee(@PathVariable String operation,@RequestParam int num1,@RequestParam int num2) {
+        int result = 0;
+        if (operation.equals("sum")) {
+            result = num1 + num2;
+        }else if(operation.equals("substract")) {
+            result = num1 - num2;
+        }else if(operation.equals("divide"))
+        {
+            result = num1 / num2;
+        }else
+            result = num1 * num2;
+
+        String result1 = String.valueOf(result);
+
+        return result1;
+    }
+
 
     @GetMapping("/students")
     public ResponseEntity<List<Student>> getAllStudent() {
